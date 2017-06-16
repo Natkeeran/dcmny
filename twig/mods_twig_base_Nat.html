@@ -87,39 +87,23 @@
 	<temporal>{{ temporal|trim }}</temporal>
 {% endfor %}
 {% endif %}
-</subject>
-{% endfor %}
-{% endif %}
-
-{% if attribute(data, 'subject_name') %}
-{% for subjectname in attribute(data, 'subject_name')|split (';') %}
-<subject>
-	<name>
-		<namePart>{{ subjectname|trim|escape }}</namePart>
-	</name>
-</subject>
-{% endfor %}
-{% endif %} 
-
 {% if attribute(data, 'subject_personal_name') %}
 {% for subjectname in attribute(data, 'subject_personal_name')|split (';') %}
-<subject>
 	<name type="personal">
 		<namePart>{{ subjectname|trim|escape }}</namePart>
 	</name>
-</subject>
 {% endfor %}
 {% endif %} 
-
 {% if attribute(data, 'subject_corporate_name') %}
 {% for subjectname in attribute(data, 'subject_corporate_name')|split (';') %}
-<subject>
 	<name type="corporate">
 		<namePart>{{ subjectname|trim|escape }}</namePart>
 	</name>
+{% endfor %}
+{% endif %} 	
 </subject>
 {% endfor %}
-{% endif %} 
+{% endif %}
 
 {% if attribute(data, 'coordinates') %}
 <subject>

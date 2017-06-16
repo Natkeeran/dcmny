@@ -173,7 +173,7 @@
 {% if attribute(data, 'extent') or attribute(data, 'form') or attribute(data, 'digital_format') or attribute(data, 'digital_origin') %}
 <physicalDescription>
 	{% if attribute(data, 'form') %}
-	<form>{{ data.form|trim }}</form>
+	<form authority="marcform">{{ data.form|trim }}</form>
 	{% endif %} 
 	{% if attribute(data, 'extent') %}
     <extent>{{ data.extent|trim }}</extent>

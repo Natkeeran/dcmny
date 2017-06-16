@@ -77,22 +77,16 @@
 {% for topic in attribute(data, 'subject_topic')|split (';') %}
 <subject>
 	<topic>{{ topic|trim }}</topic>
-</subject>
-{% endfor %}
-{% endif %}
-
-{% if attribute(data, 'location') %}
-{% for geographic in attribute(data, 'location')|split (';') %}
-<subject>
+{% if attribute(data, 'subject_geographic') %}
+{% for geographic in attribute(data, 'subject_geographic')|split (';') %}
 	<geographic>{{ geographic|trim }}</geographic>
-</subject>
 {% endfor %}
 {% endif %}
-
-{% if attribute(data, 'time_period') %}
-{% for temporal in attribute(data, 'time_period')|split (';') %}
-<subject>
+{% if attribute(data, 'subject_temporal') %}
+{% for geographic in attribute(data, 'subject_temporal')|split (';') %}
 	<temporal>{{ temporal|trim }}</temporal>
+{% endfor %}
+{% endif %}
 </subject>
 {% endfor %}
 {% endif %}

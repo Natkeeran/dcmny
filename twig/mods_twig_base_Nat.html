@@ -83,7 +83,7 @@
 {% endfor %}
 {% endif %}
 {% if attribute(data, 'subject_temporal') %}
-{% for geographic in attribute(data, 'subject_temporal')|split (';') %}
+{% for temporal in attribute(data, 'subject_temporal')|split (';') %}
 	<temporal>{{ temporal|trim }}</temporal>
 {% endfor %}
 {% endif %}
